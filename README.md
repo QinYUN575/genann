@@ -9,6 +9,10 @@ artificial neural networks (ANN) in C. Its primary focus is on being simple,
 fast, reliable, and hackable. It achieves this by providing only the necessary
 functions and little extra.
 
+Genann 是一个用于在 C 语言中训练和使用前馈人工神经网络（ANN）的简约且经过充分测试的库。
+它的主要关注点在于简单、快速、可靠和可定制。
+它实现仅通过提供必要的功能和很少的额外内容。
+
 ## Features
 
 - **C99 with no dependencies**.
@@ -21,9 +25,29 @@ functions and little extra.
 - Includes examples and test suite.
 - Released under the zlib license - free for nearly any use.
 
+- **C99 无依赖**。
+- 包含在一个源代码文件和一个头文件中。
+- 简单。
+- 快速且线程安全。
+- 易于扩展。
+- 实现了反向传播训练。
+- *兼容其他训练方法*（经典优化、遗传算法等）。
+- 包含示例和测试套件。
+- 根据 zlib 许可证发布 - 几乎可用于任何用途。
+
 ## Building
 
 Genann is self-contained in two files: `genann.c` and `genann.h`. To use Genann, simply add those two files to your project.
+
+Genann 是自包含的，包括两个文件：`genann.c` 和 `genann.h`。
+要使用 Genann，只需将这两个文件添加到您的项目中即可。
+
+### Building with CMake
+
+```shell
+cmake -G Ninja -B build
+cmake --build build --config Release
+```
 
 ## Example Code
 
@@ -33,6 +57,14 @@ Four example programs are included with the source code.
 - [`example2.c`](./example2.c) - Trains an ANN on the XOR function using random search.
 - [`example3.c`](./example3.c) - Loads and runs an ANN from a file.
 - [`example4.c`](./example4.c) - Trains an ANN on the [IRIS data-set](https://archive.ics.uci.edu/ml/datasets/Iris) using backpropagation.
+
+源代码中包括四个示例程序。
+
+- [`example1.c`](./example1.c) - 使用反向传播训练一个人工神经网络（ANN），以学习 XOR 函数。
+- [`example2.c`](./example2.c) - 使用随机搜索方法训练一个 ANN，以学习 XOR 函数。
+- [`example3.c`](./example3.c) - 从文件中加载并运行一个 ANN。
+- [`example4.c`](./example4.c) - 使用反向传播在 [IRIS 数据集](https://archive.ics.uci.edu/ml/datasets/Iris) 上训练一个 ANN。
+
 
 ## Quick Example
 
